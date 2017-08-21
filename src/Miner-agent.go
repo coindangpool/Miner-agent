@@ -21,6 +21,7 @@ func main() {
 	currency := flag.String("currency", "", "currency {zcash|ethereerum} (Optional)")
 
 	log.Info("Coindang Pool Monitoring V0.1 (beta)")
+	flag.Parse()
 
 	if *workername == "" {
 		flag.PrintDefaults()
@@ -94,7 +95,7 @@ func main() {
 		}
 
 		if ok {
-			log.Infof("Current found miner is %s", miner)
+			log.Infof("Current miner is %s", *miner)
 			setWorkerStatus(*workername, *miner, *currency, raw)
 		} else {
 			log.Warnf("Any miner coudn't find")
@@ -205,6 +206,6 @@ func setWorkerStatus(workername string, miner string, currency string, raw strin
 	respBody, err := ioutil.ReadAll(resp.Body)
 	if err == nil {
 		str := string(respBody)
-		print(str)
+		println(str)
 	}
 }
