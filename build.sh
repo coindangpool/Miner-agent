@@ -88,7 +88,8 @@ for PLATFORM in $PLATFORMS; do
   [ -e $FILE ] && rm $FILE
 
 
-  if [[ "${GOOS}" == "windows" ]]; then echo "${SOURCE_FILE:-$CURRENT_DIRECTORY}-${GOOS}-${GOARCH} -workername= -currency=zcash" > $FILE;
+  if [[ "${GOOS}" == "windows" ]]; then echo "${SOURCE_FILE:-$CURRENT_DIRECTORY}-${GOOS}-${GOARCH} -workername= -currency=zcash
+  pause" > $FILE;
   else
     echo "./${SOURCE_FILE:-$CURRENT_DIRECTORY}-${GOOS}-${GOARCH} -workername= -currency=zcash" > $FILE;
   fi
