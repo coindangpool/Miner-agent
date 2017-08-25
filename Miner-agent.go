@@ -193,7 +193,7 @@ func getSGMinerStatus() (bool, string) {
 }
 
 func setWorkerStatus(workername string, miner string, currency string, raw string) {
-	resp, err := http.PostForm("http://test.coindangpool.com/index.php?page=api&action=setworkerstatus",
+	resp, err := http.PostForm("https://coindangpool.com/index.php?page=api&action=setworkerstatus",
 		url.Values{"workername": {workername}, "miner": {miner}, "currency": {currency}, "raw": {raw}})
 	if err != nil {
 		print("setworker error")
