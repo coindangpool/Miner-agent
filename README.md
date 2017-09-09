@@ -27,6 +27,27 @@ Miner-Agent 는 코인당풀 전용 모니터링 툴입니다.
     Miner-agent -workername=test.workername1 -currency=zcash -miner=ewbfminer
 
 
+# Miner Batch file Setting
+
+- Claymore
+
+클레이 모어는 자동으로 3333 포트에 연결됩니다.
+- EWBF Zcash Miner
+
+--api 0.0.0.0:42000 를 해주셔야 Miner-agent 가 정보를 수집 할 수 있습니다.
+
+- CCMiner (beta)
+
+--api-bind 0.0.0.0:4068 를 해주셔야 Miner-agent 가 정보를 수집 할 수 있습니다.
+
+- CGMiner (beta)
+
+--api-bind 0.0.0.0:4068 를 해주셔야 Miner-agent 가 정보를 수집 할 수 있습니다.
+
+- SGMiner (beta)
+
+--api-bind 0.0.0.0:4028 를 해주셔야 Miner-agent 가 정보를 수집 할 수 있습니다.
+
 # Simple usaging
 
 이미 빌드된 실행 파일이 포함되어 있습니다.
