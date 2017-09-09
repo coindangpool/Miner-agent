@@ -28,6 +28,9 @@ Miner-Agent 는 코인당풀 전용 모니터링 툴입니다.
 
 
 # Miner Batch file Setting
+Miner-agent 는 채굴 프로그램에서 API 환경이 열려 있을 때 사용 가능합니다.
+
+Claymore 를 제외한 나머지 마이너의 경우 특정 세팅이 추가되어야 사용할 수 있습니다.
 
 - Claymore
 
