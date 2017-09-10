@@ -19,12 +19,16 @@ func main() {
 	workername := flag.String("workername", "", "workername (Required)")
 	miner := flag.String("miner", "", "miner {claymore|ewbfminer|ccminer|cgminer|sgminer} (Optional),\n If empty find miner automatically")
 	currency := flag.String("currency", "", "currency {zcash|ethereerum} (Optional)")
+	interval := flag.Duration("interval", 10, "")
 
 	log.Info("Coindang Pool Monitoring V0.1 (beta)")
 	flag.Parse()
 
 	if *workername == "" {
-		flag.PrintDefaults()
+		flag.VisitAll(func(flag *flag.Flag) {
+			log.Info("-" + flag.Name)
+			log.Info(flag.Usage)
+		});
 		os.Exit(1)
 	}
 
@@ -101,7 +105,8 @@ func main() {
 			log.Warnf("Any miner coudn't find")
 		}
 
-		time.Sleep(10 * time.Second)
+
+		time.Sleep(*interval * time.Second)
 
 	}
 }
@@ -196,16 +201,19 @@ func setWorkerStatus(workername string, miner string, currency string, raw strin
 	resp, err := http.PostForm("https://coindangpool.com/index.php?page=api&action=setworkerstatus",
 		url.Values{"workername": {workername}, "miner": {miner}, "currency": {currency}, "raw": {raw}})
 	if err != nil {
-		print("setworker error")
+		log.Error("setworker error")
 		//panic(err)
 	}
 
 	defer resp.Body.Close()
 
 	// Response 체크.
-	respBody, err := ioutil.ReadAll(resp.Body)
+	//respBody, err := ioutil.ReadAll(resp.Body)
+	_, err = ioutil.ReadAll(resp.Body)
 	if err == nil {
-		str := string(respBody)
-		println(str)
+		//str := string(respBody)
+		//log.Info(str)
+	} else {
+		log.Error(err)
 	}
 }
