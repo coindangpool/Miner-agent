@@ -1,5 +1,5 @@
 # Miner-agent
-Miner-Agent 는 코인당풀 전용 모니터링 툴입니다.
+Miner-Agent 는 희망마이닝 전용 모니터링 툴입니다.
 
 현재는 베타서비스로 제공 되고 있으며 서버 상황에 따라 잠시 중단 될 수 있습니다.
 
@@ -58,6 +58,6 @@ Claymore 를 제외한 나머지 마이너의 경우 특정 세팅이 추가되�
 releases 폴더의 시스템에 맞는 실행 파일의 .bat 파일의 파라메터를 변경 후 실행 하면 됩니다.
 
 # Contact us
-Issue : https://github.com/coindangpool/Miner-agent/issues
+Issue : https://github.com/hopemining/Miner-agent/issues
 
-E-mail : info@coindangpool.com
+E-mail : info@hopemining.org
