@@ -15,6 +15,8 @@ Miner-Agent 는 희망마이닝 전용 모니터링 툴입니다.
 파일이 생성되면 실행 파라메터와 함께 실행하면 됩니다.
 
 # Usaging
+![alt text](https://github.com/hopemining/Miner-agent/blob/master/desc1.png)
+
 
 사용하는 파라메터는 총 3가지가 있습니다.
 
